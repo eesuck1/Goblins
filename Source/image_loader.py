@@ -1,5 +1,7 @@
 from typing import Any
 
+import numpy
+
 from Source.body import Special
 from Source.nature import Ground, Plant
 from Source.constants import *
@@ -9,8 +11,7 @@ import os.path
 import pygame
 
 
-def open_image(root: str, file: str, collectable_root: str = "", collectable: str = "") -> pygame.Surface | tuple[
-    pygame.Surface, pygame.Surface]:
+def open_image(root: str, file: str, collectable_root: str = "", collectable: str = "") -> pygame.Surface | tuple[pygame.Surface, pygame.Surface]:
     if collectable_root and collectable:
         return (pygame.image.load(os.path.join(root, file)),
                 pygame.image.load(os.path.join(collectable_root, collectable)))
@@ -44,5 +45,5 @@ def load_images() -> None:
     update_tile_map(COLLECTABLE_END, Plant, COLLECTABLE_START, can_collide=True)
 
 
-def load_character(folder: str) -> tuple[pygame.Surface, ...]:
-    return tuple([pygame.image.load(os.path.join(folder, file)) for file in os.listdir(folder)])
+def load_character(folder: str) -> numpy.ndarray:
+    return numpy.array([pygame.image.load(os.path.join(folder, file)) for file in os.listdir(folder)])

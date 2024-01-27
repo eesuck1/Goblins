@@ -2,8 +2,6 @@ import random
 
 import pygame
 
-from Source.inventory import Item
-
 
 class Body:
     def __init__(self, image: pygame.Surface, name: str = f"BaseName_{random.random()}", can_collide: bool = False):

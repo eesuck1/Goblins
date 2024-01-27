@@ -3,6 +3,8 @@ pygame.init()
 
 WINDOW_SIZE = (1280, 720)
 DISPLAY_SIZE = (240, 136)
+MAX_WIDTH = DISPLAY_SIZE[0] * 8
+MAX_HEIGHT = DISPLAY_SIZE[1] * 8
 TILE_SIZE = 8
 
 GROUND_TILES = "Assets/Tiles/Ground"
